@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img class="rounded-circle account-img" src="{{ image_file }}">
+<p>  Your Account Details :  </p>
+<p>Username : {{ current_user.username  }}<p>
+<p>Email : {{ current_user.email  }}</p>
+
+<h5>Update your account : </h5>
+<div class='container'>
+<form method='POST' action="" enctype="multipart/form-data">
+{{ form.hidden_tag() }}
+Updated_Username : {{ form.username }}
+<p></p>
+Updated_Email : {{ form.email  }}
+<p></p>
+<p></p>
+{{ form.picture.label() }}
+<p></p>
+{{ form.picture }}
+<p></p>
+<p></p>
+{{ form.submit  }}
+</form>
+</div>
+{% endblock  %}
