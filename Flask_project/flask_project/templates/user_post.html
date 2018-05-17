@@ -8,7 +8,7 @@
       <div class="sidebar">
 
         <!-- insert your sidebar items here -->
-
+	<h1 class="mb-3">Posts by {{ user.username }} ({{ posts.total }})</h1>
         {% for post in posts.items %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
@@ -27,7 +27,7 @@
        {% endfor %}
        {% for page_num in posts.iter_pages() %}
             {% if page_num %}
-                <a  href="{{ url_for('hello', page=page_num) }}">{{ page_num }}</a>
+                <a  href="{{ url_for('user_post',username=user.username , page=page_num) }}">{{ page_num }}</a>
             {% else %}
                 ...
             {% endif %}
