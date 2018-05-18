@@ -6,9 +6,7 @@
 {{ form.hidden_tag() }}
 Email : {{ form.email }}
 <p></p>
-Password : {{ form.password  }}
-<p></p>
-{{ form.submit  }} <a href="{{ url_for('reset_request') }}">Forgot password ?</a>
+{{ form.submit  }}
 </form>
 </div>
 {% endblock content %}

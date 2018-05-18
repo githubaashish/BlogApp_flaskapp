@@ -80,3 +80,47 @@ class PostUpdateForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('UPdate Post')
 
+
+class RequestResetForm(FlaskForm):
+    
+    email = StringField('Email',
+                            validators=[DataRequired(), Email()])
+    
+    submit = SubmitField('Request Password Reset')
+    
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is None: 
+            raise ValidationError('email does not exist, please Register yourself First.')
+
+
+class ResetPasswordForm(FlaskForm):
+
+    password = PasswordField('Password',
+                             validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password',
+                             validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset Password')
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
