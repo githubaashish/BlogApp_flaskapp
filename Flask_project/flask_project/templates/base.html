@@ -10,7 +10,7 @@
 
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{{ url_for('hello')  }}">TweetMe</a>
+  <a class="navbar-brand" href="{{ url_for('main.hello')  }}">TweetMe</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,24 +21,24 @@
 
       
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('account')}}">Account <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('users.account')}}">Account <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class=" nav-link" href="{{ url_for('logout')}}">Logout <span class="sr-only">(current)</span></a>
+        <a class=" nav-link" href="{{ url_for('users.logout')}}">Logout <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('new_post')}}">NewPost <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('posts.new_post')}}">NewPost <span class="sr-only">(current)</span></a>
       </li>
 
      {% else %}
 
 
          <li class="nav-item active">
-        <a class=" nav-link" href="{{ url_for('register')}}">Register <span class="sr-only">(current)</span></a>
+        <a class=" nav-link" href="{{ url_for('users.register')}}">Register <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item active">
-        <a class=" nav-link" href="{{ url_for('login')}}">Login <span class="sr-only">(current)</span></a>
+        <a class=" nav-link" href="{{ url_for('users.login')}}">Login <span class="sr-only">(current)</span></a>
       </li>
 
 
@@ -46,7 +46,7 @@
 
       
 	<li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('about')}}">About<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('main.about')}}">About<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>

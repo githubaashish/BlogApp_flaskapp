@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'users.login'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -19,4 +19,9 @@ app.config['MAIL_USE_TLS'] = True
 #app.config['MAIL_PASSWORD'] = '<use environment variables here>'
 mail = Mail(app)
 
-from flask_project import routes
+from flask_project.users.routes import users
+from flask_project.posts.routes import posts
+from flask_project.main.routes import main
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(main)

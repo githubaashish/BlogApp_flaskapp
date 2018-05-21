@@ -8,7 +8,7 @@ Email : {{ form.email }}
 <p></p>
 Password : {{ form.password  }}
 <p></p>
-{{ form.submit  }} <a href="{{ url_for('reset_request') }}">Forgot password ?</a>
+{{ form.submit  }} <a href="{{ url_for('users.reset_request') }}">Forgot password ?</a>
 </form>
 </div>
 {% endblock content %}
