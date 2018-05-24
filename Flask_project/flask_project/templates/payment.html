@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{{ url_for('payments.pay') }}" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ pub_key }}"
+    data-amount="100"
+    data-name="Stripe.com"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+
+{% endblock %}
